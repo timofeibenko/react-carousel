@@ -107,14 +107,12 @@ const Carousel = (props) => {
     }
 
     const handleTouchMove = (e) => {
+        const { screenX } = e.touches[0];
+        const deltaX = Math.round(screenX - touchState.startX);
 
         if (checkIfSwipe(e)) {
             return
         }
-
-        const { screenX } = e.touches[0];
-
-        const deltaX = Math.round(screenX - touchState.startX);
 
         setTouchState({
             ...touchState,
