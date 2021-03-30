@@ -14,13 +14,7 @@ const slideStyles = css`
         text-align: center;
         background-color: #5b82a3;
         pointer-events: none;
-        
-        & img {
-            height: 50%;
-            width: 50%;
-            object-fit: contain;
-        }
-    `;
+`;
 
 const Slide = (props) => {
 
