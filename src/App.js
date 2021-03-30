@@ -1,12 +1,12 @@
 import React from 'react';
 import Carousel from "./carousel/Carousel";
+import { css, jsx } from "@emotion/react";
 
 import capybara_1 from './img/capybara-1.png';
 import capybara_2 from './img/capybara-2.png';
 import capybara_3 from './img/capybara-3.png';
 import capybara_4 from './img/capybara-4.png';
 import capybara_5 from './img/capybara-5.png';
-import { css, jsx } from "@emotion/react";
 
 /** @jsx jsx */
 
