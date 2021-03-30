@@ -36,3 +36,8 @@ The project uses the following scripts:
 * [Emotion CSS in JS library](https://emotion.sh/docs/introduction)
 * Webpack and Babel to set up the environment
 * gh-pages npm package to publish the app
+
+## 5. Known issues:
+* Carousel reacts to vertical swipes
+* Swipe start has a little delay 
+* On resize the carousel 
