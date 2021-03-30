@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/react';
 
 import Content from "./Content";
@@ -50,21 +50,19 @@ const Carousel = (props) => {
             ...carouselState,
             slideWidth: getWidth(),
             contentWidth: getWidth(),
-        })
+        });
 
         const handleResize = () => {
-
             setCarouselState({
                 ...carouselState,
                 slideWidth: getWidth(),
                 contentWidth: getWidth(),
-            })
-        }
+            });
+        };
 
         window.addEventListener('resize', handleResize)
 
         return () => window.removeEventListener('resize', handleResize)
-
     }, []);
 
     const prevSlide = () => {
@@ -78,7 +76,7 @@ const Carousel = (props) => {
         })
 
         setAbsTranslateState(carouselState.slideWidth * (carouselState.activeSlide - 1))
-    }
+    };
 
     const nextSlide = () => {
         if (carouselState.activeSlide === slidesData.length - 1) return
@@ -91,18 +89,16 @@ const Carousel = (props) => {
         });
 
         setAbsTranslateState(carouselState.slideWidth * (carouselState.activeSlide + 1))
-    }
+    };
 
     const handleTouchStart = (e) => {
-
-        const { screenX } = e.touches[0]
+        const { screenX } = e.touches[0];
 
         setSwipeState({
             ...swipeState,
             startTime: e.timeStamp,
             startX: screenX,
-        })
-
+        });
 
         setTouchState({
             ...touchState,
@@ -116,15 +112,15 @@ const Carousel = (props) => {
             return
         }
 
-        const { screenX } = e.touches[0]
+        const { screenX } = e.touches[0];
 
-        const deltaX = Math.round(screenX - touchState.startX)
+        const deltaX = Math.round(screenX - touchState.startX);
 
         setTouchState({
             ...touchState,
             endX: screenX,
             deltaX: deltaX,
-        })
+        });
 
         // if last slide - no finger-follow slide forward
         if (carouselState.activeSlide === slidesData.length - 1 && deltaX < 0) {
@@ -136,13 +132,13 @@ const Carousel = (props) => {
             transitionDur: 0,
             translate: -deltaX + absTranslateState,
         });
-    }
+    };
 
     const checkIfSwipe = (e) => {
         return  Math.round(e.timeStamp) - Math.round(swipeState.startTime) < 250
                 &&
                 Math.round(e.timeStamp) - Math.round(swipeState.startTime) > 100;
-    }
+    };
 
     const handleTouchEnd = (e) => {
 
@@ -161,8 +157,8 @@ const Carousel = (props) => {
             return
         }
 
-        touchState.deltaX < 0 ? nextSlide() : prevSlide()
-    }
+        touchState.deltaX < 0 ? nextSlide() : prevSlide();
+    };
 
     return (
         <div
@@ -210,6 +206,6 @@ const Carousel = (props) => {
             />
         </div>
     )
-}
+};
 
 export default Carousel;

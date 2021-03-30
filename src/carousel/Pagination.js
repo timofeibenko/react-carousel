@@ -4,7 +4,6 @@ import { css, jsx } from '@emotion/react';
 /** @jsx jsx */
 
 const Dot = (props) => {
-
     const {
         active,
         handleDotClick
@@ -56,7 +55,7 @@ const Pagination = (props) => {
                 activeSlide: dotIndex,
             })
         }
-    }
+    };
 
     return (
         <div
