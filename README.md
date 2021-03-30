@@ -1,3 +1,5 @@
 # React Carousel
 
-This is a react carousel component. More info will come later
+This is a react carousel component. 
+
+[link](https://timofei-benko.github.io/react-carousel/)
