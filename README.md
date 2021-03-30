@@ -8,13 +8,7 @@ This is a React carousel component built with React Hooks. You can see it live b
 your browser's 
 DevTools).*
 
-Technologies used:
-* React core
-* [Emotion CSS in JS library](https://emotion.sh/docs/introduction)
-* Webpack and Babel to set up the environment
-* gh-pages npm package to publish the app
-
-Features:
+## 2. Features:
 * The carousel is fully responsive and adapts dynamically to screen size change
 * On desktop, you can use the navigation buttons in order to proceed to the next / previous slide
 * On touch devices, you can also use swipes for navigation:
@@ -24,7 +18,7 @@ Features:
       
 * You can also navigate through the slides via navigation panel on the bottom of the carousel
 
-## 2. Environment
+## 3. Environment
 
 In order to set up the project proceed as follows:
 1. Clone the repo:
@@ -36,3 +30,9 @@ The project uses the following scripts:
 1. `dev` - used to run the project against localhost in development mode
 1. `prod` - used to create an optimized project build
 1. `deploy` - deploys the project build to gh-pages
+
+## 4. Technologies used:
+* React core
+* [Emotion CSS in JS library](https://emotion.sh/docs/introduction)
+* Webpack and Babel to set up the environment
+* gh-pages npm package to publish the app
