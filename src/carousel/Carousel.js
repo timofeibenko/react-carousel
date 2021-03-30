@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/react';
-import { v4 as keyGen } from 'uuid';
 
 import Content from "./Content";
 import Slide from "./Slide";
@@ -168,9 +167,9 @@ const Carousel = (props) => {
                 }
             >
                 {
-                    slidesData.map((slideData) => (
+                    slidesData.map((slideData, i) => (
                         <Slide
-                            key={keyGen()}
+                            key={`slide-${i}-${new Date().getTime()}`}
                             slideData={slideData}
                             slideStyles={slideStyles}
                             carouselState={carouselState}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { css, jsx } from '@emotion/react';
-import { v4 as keyGen } from 'uuid';
 
 /** @jsx jsx */
 
@@ -73,7 +72,7 @@ const Pagination = (props) => {
             {
                 slidesData.map((slide, i) => (
                      <Dot
-                         key={keyGen()}
+                         key={`dot-${i}-${new Date().getTime()}`}
                          active={activeSlide === i}
                          handleDotClick={() => handleDotClick(i)}
                     />
