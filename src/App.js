@@ -38,26 +38,6 @@ const slidesData = [
     },
 ]
 
-const slideStyles = css`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 0 1rem;
-    text-align: center;
-    background-color: #5b82a3;
-    pointer-events: none;
-    
-    & img {
-        height: 50%;
-        width: 50%;
-        object-fit: contain;
-    }
-`;
-
-
 const App = () => {
     return(
         <div style={
@@ -79,7 +59,6 @@ const App = () => {
             </h2>
             <Carousel
                 slidesData={slidesData}
-                slideStyles={slideStyles}
             />
         </div>
     );
