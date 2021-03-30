@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { css, jsx } from '@emotion/react';
 
 import Content from "./Content";
@@ -20,7 +20,7 @@ const carouselStyles = css`
 
 const Carousel = (props) => {
 
-    const { slidesData, slideStyles } = props;
+    const { slidesData } = props;
 
     const [carouselState, setCarouselState] = useState({
         translate: 0,
@@ -44,13 +44,26 @@ const Carousel = (props) => {
     const [absTranslateState, setAbsTranslateState] = useState(0);
 
     useEffect(() => {
-        const getSlideWidth = () => document.querySelector('.slide').offsetWidth;
+        const getWidth = () => document.querySelector('.carousel').offsetWidth;
 
         setCarouselState({
             ...carouselState,
-            slideWidth: getSlideWidth() * slidesData.length,
-            contentWidth: getSlideWidth() * slidesData.length,
+            slideWidth: getWidth(),
+            contentWidth: getWidth(),
         })
+
+        const handleResize = () => {
+
+            setCarouselState({
+                ...carouselState,
+                slideWidth: getWidth(),
+                contentWidth: getWidth(),
+            })
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        return () => window.removeEventListener('resize', handleResize)
 
     }, []);
 
@@ -153,9 +166,11 @@ const Carousel = (props) => {
 
     return (
         <div
+            className={'carousel'}
             css={carouselStyles}
         >
             <Content
+                className={'content'}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -171,7 +186,6 @@ const Carousel = (props) => {
                         <Slide
                             key={`slide-${i}-${new Date().getTime()}`}
                             slideData={slideData}
-                            slideStyles={slideStyles}
                             carouselState={carouselState}
                             setCarouselState={setCarouselState}
                         />
