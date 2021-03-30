@@ -39,5 +39,5 @@ The project uses the following scripts:
 
 ## 5. Known issues:
 * Carousel reacts to vertical swipes
-* Swipe start has a little delay 
-* On resize the carousel 
+* Swipe start has a little delay
+* On resize, the carousel sets to the first slide
