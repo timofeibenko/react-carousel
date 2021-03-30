@@ -3,11 +3,7 @@ import { css, jsx } from '@emotion/react';
 
 /** @jsx jsx */
 
-const Slide = (props) => {
-
-    const { slideData } = props;
-
-    const slideStyles = css`
+const slideStyles = css`
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -26,13 +22,16 @@ const Slide = (props) => {
         }
     `;
 
+const Slide = (props) => {
+
+    const { slideData } = props;
+
     return (
         <div
             css={slideStyles}
         >
             <h2>{slideData.title}</h2>
             <p>{slideData.description}</p>
-            {/*<img src={slideData.img} alt="capybara"/>*/}
         </div>
     )
 };
