@@ -8,7 +8,7 @@ This is a React carousel component built with React Hooks. You can see it live b
 your browser's 
 DevTools).*
 
-## 2. Features:
+## 2. Features
 * The carousel is fully responsive and adapts dynamically to screen size change
 * Works with all kinds of HTML-content
 * On desktop, you can use the navigation buttons in order to proceed to the next / previous slide
@@ -46,13 +46,16 @@ The project uses the following scripts:
 1. `prod` - used to create an optimized project build
 1. `deploy` - deploys the project build to gh-pages
 
-## 4. Technologies used:
+## 4. Technologies used
+
+Thechnology stack includes, but is not limited to:
+
 * React
 * [Emotion CSS in JS library](https://emotion.sh/docs/introduction)
 * Webpack and Babel to set up the environment
 * gh-pages npm package to publish the app
 
-## 5. Known issues:
+## 5. Known issues
 * Carousel reacts to vertical swipes
 * Swipe start has a little delay
 * On resize, the carousel sets to the first slide
